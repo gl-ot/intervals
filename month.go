@@ -8,5 +8,5 @@ func firstOfMonth(t time.Time) day {
 }
 
 func lastOfMonth(t time.Time) day {
-	return timeToDay(dayToTime(firstOfMonth(t)).AddDate(0, 0, -1))
+	return timeToDay(dayToTime(firstOfMonth(t)).AddDate(0, 1, -1))
 }

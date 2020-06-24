@@ -13,5 +13,5 @@ func firstOfWeek(t time.Time) day {
 }
 
 func lastOfWeek(t time.Time) day {
-	return timeToDay(dayToTime(firstOfWeek(t)).AddDate(0, 0, 7))
+	return timeToDay(dayToTime(firstOfWeek(t)).AddDate(0, 0, 6))
 }

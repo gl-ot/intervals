@@ -4,7 +4,7 @@ import "time"
 
 type Period int
 
-const(
+const (
 	Unknown Period = iota
 	FiveYears
 	Year
@@ -13,7 +13,22 @@ const(
 	Day
 )
 
+var intervals = [...]string{
+	"Unknown",
+	"FiveYears",
+	"Year",
+	"Month",
+	"Week",
+	"Day",
+}
+
+// String returns the English name of the day ("Sunday", "Monday", ...).
+func (p Period) String() string {
+	return intervals[p]
+}
+
 func InSameInterval(t1 time.Time, t2 time.Time, p Period) bool {
+	time.Now().Weekday()
 	return FirstDay(t1, p) == FirstDay(t2, p)
 }
 
